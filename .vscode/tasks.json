@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0",
+  "command": "yarn",
+  "showOutput": "always",
+  "tasks": [
+    {
+      "taskName": "lint"
+    },
+    {
+      "taskName": "build"
+    }
+  ]
+}
