@@ -20,14 +20,14 @@ class Connect extends Component {
   render() {
     return React.cloneElement(Children.only(this.props.children), {
       ...this.props.mapper(callback =>
-        this.context.blackout(this.state.node, callback)
+        this.context.overlay(this.state.node, callback)
       )
     });
   }
 }
 
 Connect.contextTypes = {
-  blackout: PropTypes.func.isRequired
+  overlay: PropTypes.func.isRequired
 };
 
 export default mapper => Component => props => {

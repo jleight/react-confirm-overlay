@@ -10,7 +10,7 @@ const defaultState = {
       textAlign: 'center'
     }
   },
-  blackout: {
+  overlay: {
     className: null,
     style: {
       position: 'absolute',
@@ -78,7 +78,7 @@ function getBounds(element) {
   };
 }
 
-export default class BlackoutProvider extends Component {
+export default class ConfirmOverlayProvider extends Component {
   constructor(props, context) {
     super(props, context);
 
@@ -86,18 +86,18 @@ export default class BlackoutProvider extends Component {
       ...defaultState
     };
 
-    this.handleBlackout = this.handleBlackout.bind(this);
+    this.handleOverlay = this.handleOverlay.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
   }
 
   getChildContext() {
     return {
-      blackout: this.handleBlackout
+      overlay: this.handleOverlay
     };
   }
 
-  handleBlackout(wrapper, callback) {
+  handleOverlay(wrapper, callback) {
     this.setState({
       isActive: true,
       container: {
@@ -128,7 +128,7 @@ export default class BlackoutProvider extends Component {
       label,
       submit,
       cancel,
-      blackout
+      overlay
     } = this.state;
 
     return (
@@ -168,13 +168,13 @@ export default class BlackoutProvider extends Component {
                   {cancel.text}
                 </button>}
             </form>
-            <div className={blackout.className} style={blackout.style} />
+            <div className={overlay.className} style={overlay.style} />
           </div>}
       </div>
     );
   }
 }
 
-BlackoutProvider.childContextTypes = {
-  blackout: PropTypes.func.isRequired
+ConfirmOverlayProvider.childContextTypes = {
+  overlay: PropTypes.func.isRequired
 };
