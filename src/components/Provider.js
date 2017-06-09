@@ -66,11 +66,12 @@ const defaultState = {
 
 function getBounds(element) {
   const bounds = element.getBoundingClientRect();
+  const { pageXOffset = 0, pageYOffset = 0 } = window;
   return {
-    top: bounds.top,
+    top: bounds.top + pageYOffset,
     right: bounds.right,
     bottom: bounds.bottom,
-    left: bounds.left,
+    left: bounds.left + pageXOffset,
     width: bounds.width,
     height: bounds.height,
     lineHeight: `${bounds.height}px`
