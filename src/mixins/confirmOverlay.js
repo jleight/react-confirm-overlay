@@ -1,6 +1,7 @@
-import React, { Component, Children } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import React from 'react';
+import { Children, Component } from 'react';
+import ReactDOM from 'react-dom';
 
 class Connect extends Component {
   constructor(props, context) {

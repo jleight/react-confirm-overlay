@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+import { Component } from 'react';
 
 const defaultState = {
   isActive: false,
@@ -134,7 +135,7 @@ export default class ConfirmOverlayProvider extends Component {
     return (
       <div>
         {this.props.children}
-        {isActive &&
+        {isActive && (
           <div className={container.className} style={container.style}>
             <form
               action={form.action}
@@ -142,10 +143,11 @@ export default class ConfirmOverlayProvider extends Component {
               className={form.className}
               style={form.style}
             >
-              {label.display &&
+              {label.display && (
                 <label htmlFor={submit.name} style={label.style}>
                   {label.text}
-                </label>}
+                </label>
+              )}
               <button
                 type={submit.type}
                 className={submit.className}
@@ -156,7 +158,7 @@ export default class ConfirmOverlayProvider extends Component {
               >
                 {submit.text}
               </button>
-              {cancel.display &&
+              {cancel.display && (
                 <button
                   type={cancel.type}
                   className={cancel.className}
@@ -166,10 +168,12 @@ export default class ConfirmOverlayProvider extends Component {
                   onClick={this.handleCancel}
                 >
                   {cancel.text}
-                </button>}
+                </button>
+              )}
             </form>
             <div className={overlay.className} style={overlay.style} />
-          </div>}
+          </div>
+        )}
       </div>
     );
   }
