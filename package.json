@@ -4,12 +4,7 @@
   "private": true,
   "description": "Simple overlay with confirmation button.",
   "main": "lib/index.js",
-  "typings": "./index.d.ts",
-  "files": [
-    "lib",
-    "src",
-    "index.d.ts"
-  ],
+  "files": ["lib", "src"],
   "scripts": {
     "lint": "eslint src",
     "build": "babel src --out-dir lib"
@@ -18,10 +13,7 @@
     "type": "git",
     "url": "https://github.com/jleight/react-confirm-overlay.git"
   },
-  "keywords": [
-    "react",
-    "overlay"
-  ],
+  "keywords": ["react", "overlay"],
   "authors": [
     "Jonathon Leight <jonathon.leight@jleight.com> (https://github.com/jleight)"
   ],
