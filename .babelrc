@@ -4,7 +4,7 @@
       "env",
       {
         "targets": {
-          "browsers": "last 2 Chrome versions"
+          "browsers": "last 2 versions"
         },
         "modules": "commonjs",
         "loose": true
@@ -12,5 +12,5 @@
     ],
     "react"
   ],
-  "plugins": [["transform-object-rest-spread", { "useBuiltIns": true }]]
+  "plugins": [["transform-object-rest-spread", { "useBuiltIns": false }]]
 }
